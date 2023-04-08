@@ -63,6 +63,7 @@ else
 
 
 //Task 8
+/*
 Console.WriteLine("Enter an integer: ");
 
 //string userInput = Console.ReadLine() ?? "";
@@ -82,3 +83,7 @@ while (count <= userNumber)
     count += 2;
   }
 }
+*/
+
+string number = Console.ReadLine() ?? "";
+Console.WriteLine($"{number} -> {number[^1]}");
