@@ -73,17 +73,19 @@ int count = 2;
 
 while (count <= userNumber)
 {
-  if (count%2 == 0)
-  {
-    Console.Write($"{count}, ");
-    count += 2;
-  }
-  else
-  {
-    count += 2;
-  }
+  //if (count%2 == 0)
+  
+  Console.Write($"{count}, "); 
+  
+  // else
+  // {
+  //   count += 2;
+  // }
+  count += 2;
 }
 */
 
+/*
 string number = Console.ReadLine() ?? "";
 Console.WriteLine($"{number} -> {number[^1]}");
+*/
