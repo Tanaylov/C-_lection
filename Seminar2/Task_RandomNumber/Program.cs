@@ -11,3 +11,4 @@ if (digit2 > max)
 } 
 
 Console.Write($"{randomNumber} -> {max}");
+
