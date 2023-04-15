@@ -21,10 +21,14 @@ Console.Write($"{userNum} -> ");
 for (index = 1; index < userNum + 1; index ++)
 {
   cube [index] = index*index*index;
-  Console.Write(cube[index].ToString() + ", ");
+  
   if (index == userNum)
   {
     Console.Write(cube[index].ToString());
   }
-  
+  else
+  {
+    Console.Write(cube[index].ToString() + ", ");
+  }
 } 
+
