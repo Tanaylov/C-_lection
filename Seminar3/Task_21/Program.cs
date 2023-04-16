@@ -29,6 +29,6 @@ static void checkingOnValid (ref double userInPut, string axis)
 
 static void Distance (double X1, double Y1, double X2, double Y2 )
 {
-  double resalt = Math.Sqrt((X1 - X2)*(X1 - X2) + (Y1 - Y2)*(Y1 - Y2));//Math.sqrt - квадратный корень
+  double resalt = Math.Sqrt((X1 - X2)*(X1 - X2) + (Y1 - Y2)*(Y1 - Y2));
   Console.WriteLine(resalt); 
 }
