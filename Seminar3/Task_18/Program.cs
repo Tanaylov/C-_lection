@@ -11,7 +11,7 @@ static void CheckingOnValid (ref int userInput)
     try
     {
       Console.Write("Enter the number of quarter (1-4): ");
-      userInput = int.Parse(Console.ReadLine().Replace('.',',') ?? "");
+      userInput = int.Parse(Console.ReadLine() ?? "");
       if (userInput > 0 && userInput < 5)
       break;
     }

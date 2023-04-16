@@ -9,7 +9,7 @@ static void checkingOnValid (ref double userInPut, string axis)
     try
     {
       Console.Write($"Enter {axis}-value: ");
-      userInPut = double.Parse(Console.ReadLine().Replace('.',',') ?? "");
+      userInPut = double.Parse(Console.ReadLine().Replace('.',','));
       break;
     }
     catch(Exception exc)
