@@ -3,26 +3,7 @@
 // 3, 5 -> 243 (3⁵)
 
 Console.Clear();
-/*
-double inputNumber_1;
-double inputNumber_2;
 
-while (true)
-{
-  Console.WriteLine("Enter two number: ");
-  if (double.TryParse(Console.ReadLine().Replace('.',',') ?? "", out inputNumber_1) && 
-      double.TryParse(Console.ReadLine().Replace('.',',') ?? "", out inputNumber_2))
-  {
-    double result = Math.Pow(inputNumber_1, inputNumber_2);
-    Console.WriteLine(result);
-  } 
-  else
-  {
-  Console.WriteLine("Incorrect input!");
-  break;
-  }
-}
-*/
 double inputNumber_1 = 0;
 double inputNumber_2 = 0; 
 DegreeOfSecondNumber(ref inputNumber_1, ref inputNumber_2);
