@@ -34,8 +34,8 @@ static void DegreeOfSecondNumber(ref double inputNumber_1, ref double inputNumbe
     try
     {
       Console.WriteLine("Enter two number: ");
-      inputNumber_1 = double.Parse(Console.ReadLine().Replace('.', ',') ?? "");
-      inputNumber_2 = double.Parse(Console.ReadLine().Replace('.', ',') ?? "");
+      inputNumber_1 = double.Parse(Console.ReadLine() ?? "".Replace('.', ','));
+      inputNumber_2 = double.Parse(Console.ReadLine() ?? "".Replace('.', ','));
       double result = Math.Pow(inputNumber_1, inputNumber_2);
       Console.WriteLine(result);
     }

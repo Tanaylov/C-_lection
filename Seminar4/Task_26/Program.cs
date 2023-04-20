@@ -14,7 +14,6 @@ int InputFromUser(string messegeForUser, string errorMessage)
     return userNumber;
     Console.WriteLine(errorMessage);
   }
-  string numberFromUser = userNumber.ToString();
 } 
 int DigitCount(int num)
 {
