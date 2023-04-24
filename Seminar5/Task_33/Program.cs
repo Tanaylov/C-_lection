@@ -28,10 +28,8 @@ int GetDateFromUser(ref int dates, string date)
 void CheckingForNumber(int [] array, int number)
 {
   int count = 0;
-  foreach(int el in array)
-  {
-   if(el == number) count++;
-  }
+  foreach(int el in array) if(el == number) count++;
+
   if(count != 0) System.Console.WriteLine($"Yes, {count} times");
   else System.Console.WriteLine("NO");
 }
