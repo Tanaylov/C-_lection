@@ -25,11 +25,14 @@ int GetDateFromUser(ref int dates, string date)
  return dates;
 }
 
-void CheckingForNumber(int [] array, int number)
+bool CheckingForNumber(int [] array, int number)
 {
-  int count = 0;
-  foreach(int el in array) if(el == number) count++;
-
-  if(count != 0) System.Console.WriteLine($"Yes, {count} times");
-  else System.Console.WriteLine("NO");
+  //int count = 0;
+  foreach(int el in array) 
+  {
+    if(el == number) return true; //count++;
+  }
+  return false;
+//   if(count != 0) System.Console.WriteLine($"Yes, {count} times");
+//   else System.Console.WriteLine("NO");
 }
