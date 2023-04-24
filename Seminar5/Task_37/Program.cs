@@ -1,5 +1,5 @@
 ﻿Console.Clear();
-
+/*
 double [] array = GetArray();
 System.Console.WriteLine("[" + string.Join(" / ", array) + "]");
 array = ArraySumElements(array);
@@ -20,7 +20,7 @@ double [] GetArray()
   while(true)
   {
     System.Console.WriteLine("Set the beginning of the array: ");
-    if(double.TryParse(Console.ReadLine().Replace('.',','), out start))
+    if(double.TryParse(Console.ReadLine() ?? "".Replace('.',','), out start))
       break;
     System.Console.WriteLine("Wrong enter!");
   }
@@ -28,7 +28,7 @@ double [] GetArray()
   while(true)
   {
     System.Console.WriteLine("Set the end of the array: ");
-    if(double.TryParse(Console.ReadLine().Replace('.',','), out finish))
+    if(double.TryParse(Console.ReadLine() ?? "".Replace('.',','), out finish))
       break;
     System.Console.WriteLine("Wrong enter!");
   }
@@ -77,3 +77,17 @@ double [] ArraySumElements(double [] arrOrigine)
     return newArray;
   }
 }
+*/
+
+int [] array = {1, 5, 11, 11, 23, 7, 3};
+int size = array.Length;
+double newSize = Convert.ToDouble(size);
+newSize = Math.Ceiling(newSize / 2);
+int newSize2 = Convert.ToInt32(newSize);
+int [] arr = new int[newSize2];
+for(int i = 0; i < size; i++)
+{
+  arr[i] = i < size - 1 ? array[i]*array[size - 1] : array[newSize2 - 1];
+  size--;
+}
+System.Console.WriteLine(string.Join("//", arr));
