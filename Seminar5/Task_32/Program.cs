@@ -5,7 +5,9 @@ double st = new Random().NextDouble() * (-1 + 5) - 5,
        fin = new Random().NextDouble() * (15 - 3) + 3;
 
 double [] myArray = GetRandomArray(len, st, fin);
+System.Console.WriteLine(String.Join(" // ", myArray));
 
+myArray = GetReversedArray(len, myArray);
 System.Console.WriteLine(String.Join(" // ", myArray));
 
 ArrayReverse(myArray);
@@ -20,16 +22,22 @@ double [] GetRandomArray(byte length, double start, double finish)
   }
   return array;
 }
+
+double [] GetReversedArray(byte len, double [] array)
+{
+  for(byte i = 0; i < len; i++)
+    array[i] = array[i] * -1;
+  return array;
+}
+
 void ArrayReverse(double [] array1)
 {
-  for(byte j = 0; j < array1.Length; j++)
+  double index = 0;
+  foreach(double el in array1)
   {
-    array1[j] = array1[j] / -1;
-    System.Console.WriteLine(array1[j] + "||");
+    index = el / -1;
+    System.Console.Write(index + " || ");
   }
 }
 
-/*
-if(array1[i] > 0) array1[i] *= -1; 
-    else array1[i] = Math.Abs(array1[i]);
-*/    
+  
