@@ -79,15 +79,15 @@ double [] ArraySumElements(double [] arrOrigine)
 }
 */
 
-int [] array = {1, 5, 11, 11, 23, 7, 3};
+int [] array = {1, 5, 5, 7, 11, 2, 4};
 int size = array.Length;
-double newSize = Convert.ToDouble(size);
-newSize = Math.Ceiling(newSize / 2);
-int newSize2 = Convert.ToInt32(newSize);
-int [] arr = new int[newSize2];
+int newSize = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(size) / 2));
+//newSize = Math.Ceiling(newSize / 2);
+//int newSize2 = Convert.ToInt32(newSize);
+int [] arr = new int[newSize];
 for(int i = 0; i < size; i++)
 {
-  arr[i] = i < size - 1 ? array[i]*array[size - 1] : array[newSize2 - 1];
+  arr[i] = i < size - 1 ? array[i]*array[size - 1] : array[newSize - 1];
   size--;
 }
 System.Console.WriteLine(string.Join("//", arr));
