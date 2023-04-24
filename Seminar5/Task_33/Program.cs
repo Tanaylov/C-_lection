@@ -8,7 +8,7 @@ int searchingNum = GetDateFromUser(ref num, "number");
 int [] arrayS = GetArray(lenAr, startArr, finishArr);
 
 System.Console.WriteLine(String.Join(" ** ", arrayS));
-System.Console.WriteLine(CheckingForNumber(arrayS, searchingNum));
+System.Console.WriteLine(CheckingForNumber(arrayS, searchingNum) ? "Yes" : "No");
 
 int [] GetArray(int lenAr, int startArr, int finishArr)
 {
