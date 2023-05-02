@@ -8,8 +8,5 @@ System.Console.WriteLine(result);
 
 bool TriangleCheck(double n1, double n2, double n3)
 {
-  if(n1 + n2 > n3 && n1 + n3 > n2 && n2 + n3 > n1) 
-    return true;
-  else
-    return false;
+    return n1 + n2 > n3 && n1 + n3 > n2 && n2 + n3 > n1;
 }
