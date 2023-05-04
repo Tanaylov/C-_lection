@@ -81,8 +81,6 @@ float SumElementsOnMainDiagonal(float[,] arr)
   float result = 0;
   for(byte i = 0; i < arr.GetLength(0); i++)
     for(byte j = 0; j < arr.GetLength(1); j++)
-      {
-        if(i == j) result += arr[i, j];
-      }
+        result += i == j ? arr[i, j] : 0;
   return (float)Math.Round(result, 1);    
 }
