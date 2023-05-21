@@ -40,6 +40,4 @@ short SumRec(int n)
   else return Convert.ToInt16(n + SumRec(n - 1));
 }
 
-        string num = "12345";
-        foreach(char el in num)
-            Console.WriteLine($"Номер элемента: {el}");
+
