@@ -100,5 +100,5 @@ void SubArrayWithMinSumElements(float[,] arr)
     if(arr1D[k] > arr1D[k + 1])
       min = Convert.ToByte(k + 1);
   }
-  System.Console.WriteLine(min + 1);
+  System.Console.WriteLine($"The sum of elements in {min + 1} row has the smallest value");
 }
