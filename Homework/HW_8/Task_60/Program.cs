@@ -1,4 +1,5 @@
-﻿/* Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+﻿/* Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 Массив размером 2 x 2 x 2
 66(0,0,0) 25(0,1,0)
 34(1,0,0) 41(1,1,0)
@@ -6,11 +7,44 @@
 26(1,0,1) 55(1,1,1) */
 Console.Clear();
 
-sbyte[,,] array3D = Get3DArray2x2x2();
+byte size1 = (byte)new Random().Next(3, 5);
+byte size2 = (byte)new Random().Next(3, 5);
+byte size3 = (byte)new Random().Next(3, 5);
 
+int[] array1D = GetRandom1DArrayWithNonRepeatingElements(size1, size2, size3);
+int[,,] array3D = Get3DArrayFrom1DArray(array1D, size1, size2, size3);
 Print3DArray(array3D);
 
-void Print3DArray(sbyte[,,] array)
+int[,,] array3DAlternative = Get3DArray(size1, size2, size3);
+Print3DArray(array3DAlternative);
+
+int[] GetRandom1DArrayWithNonRepeatingElements(byte dimension1, byte dimension2, byte dimension3)
+{
+  byte size = Convert.ToByte(dimension1 * dimension2 * dimension3);
+  int[] arr = new int[size];
+  for(byte i = 0; i < size; i++)
+  {
+    int num = new Random().Next(10, 200);
+    if(arr.Contains(num)) i--;
+    else arr[i] = num;
+  }
+  System.Console.Write(String.Join("|", arr));
+  return arr;
+}
+int[,,] Get3DArrayFrom1DArray(int[] arr1D, byte dimension1, byte dimension2, byte dimension3)
+{
+  int[,,] arr3D = new int[dimension1, dimension2, dimension3];
+  byte index = 0;
+  for(byte i = 0; i < dimension1; i++)
+    for(byte j = 0; j < dimension2; j++)
+      for(byte k = 0; k < dimension3; k++)
+        {
+          arr3D[i, j, k] = arr1D[index];
+          index++;
+        }
+  return arr3D;
+}
+void Print3DArray(int[,,] array)
 {
   for(byte i = 0; i < array.GetLength(0); i++)
   {
@@ -22,28 +56,32 @@ void Print3DArray(sbyte[,,] array)
         Console.Write($"{array[i, j, k]}({i}, {j}, {k}) | ");
     }
   }
+  Console.WriteLine();
 }
 
-sbyte[,,] Get3DArray2x2x2()
-{
-  sbyte[,,] arr3D = new sbyte[3, 3, 3];
+// Попытался реализовать генерацию случайных чисел с пмощью while(true), но что-то не получилось.
+// Где я делаю неправильно так и не понял?
 
-  for(byte i = 0; i < 3; i++)
-    for(byte j = 0; j < 3; j++)
-      for(byte k = 0; k < 3; k++) 
+int[,,] Get3DArray(byte dimen1, byte dimen2, byte dimen3)
+{
+  int[,,] arr3D = new int[dimen1, dimen2, dimen3];
+
+  for(byte i = 0; i < dimen1; i++)
+    for(byte j = 0; j < dimen2; j++)
+      for(byte k = 0; k < dimen3; k++) 
       { 
         while(true)
         {
-          sbyte num = (sbyte)new Random().Next(10, 100);
-          for(byte a = 0; a < 3; a++)
-            for(byte b = 0; b < 3; b++)
-              for(byte c = 0; c < 3; c++) 
-                if(num == arr3D[a, b, c]) arr3D[a, b, c] = Convert.ToSByte(num + 1);
-                else arr3D[a, b, c] = num;
+          int num = new Random().Next(10, 200);
+          for(byte a = 0; a < dimen1; a++)
+            for(byte b = 0; b < dimen2; b++)
+              for(byte c = 0; c < dimen3; c++) 
+                if(arr3D[a, b, c] != num) arr3D[i, j, k] = num;
           break;
-        } 
-        arr3D[i, j, k] = arr3D[a, b, c]; 
+        }
+          
       } 
   return arr3D;
 }
+
 

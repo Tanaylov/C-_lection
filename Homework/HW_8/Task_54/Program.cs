@@ -12,7 +12,7 @@
 
 Console.Clear();
 
-byte subArrayQuantity = GetNumberFromUser(text: "Please enter the number to determine  sub-array quantity.",
+byte subArrayQuantity = GetNumberFromUser(text: "Please enter the number to determine sub-array quantity.",
                                           error: "You enter wrong number");
 byte elementsQuantity = GetNumberFromUser(text: "Please enter the number to determine elements quantity.",
                                           error: "You enter wrong number");
