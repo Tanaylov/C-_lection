@@ -11,8 +11,7 @@ Console.WriteLine($"N = {number} --> {intervalFromNto1}");
 string NumberFromNto1(short num)
 {
   if(num > 1) return $"{num}, {NumberFromNto1(Convert.ToInt16(num - 1))}";
-//Следующую строчку сделал для практики, можно сказать.
-//Знаю, что отрицательные числа не являются натуральными.
+//Знаю, что отрицательные числа не являются натуральными, но для практики решил добавить)
   else if(num < 1) return $"{num}, {NumberFromNto1(Convert.ToInt16(num + 1))}"; 
   else return $"{num}";
 }
